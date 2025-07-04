@@ -142,7 +142,7 @@ public class CardTest {
         assertEquals("hi", listPage.getDisplayedCommentText());
     }
     @Test
-    public void deleteTag() {
+    public void test07deleteTag() {
         signInPage.open();
         signInPage.clickSignIn(); // Perform default sign-in
         listPage.openBoard();
@@ -150,7 +150,7 @@ public class CardTest {
         listPage.clickCardContent(); // Click the newly created card to open its details
 
         listPage.clickTagsLink(); // Click the "Tags" link in card details
-        listPage.clickGreenTag(); // Click the green tag option// Click the green tag again to deselect/remove it
+        listPage.clickTagDelete(); // Click the green tag option// Click the green tag again to deselect/remove it
 
         // Step 3: Verify the tag is no longer displayed
         assertFalse("Green tag should NOT be displayed after deletion", listPage.isTagDisplayed());

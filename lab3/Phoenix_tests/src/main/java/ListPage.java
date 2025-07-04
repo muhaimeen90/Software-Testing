@@ -21,7 +21,8 @@ public class ListPage {
     private By firstMemberToAdd = By.cssSelector("ul:nth-child(2) > li:nth-child(1) > a");
     private By cardMemberGravatar = By.cssSelector(".react-gravatar:nth-child(2)");
     private By tagsLink = By.linkText("Tags");
-    private By greenTag = By.cssSelector(".green"); // Selector for the green tag
+    private By greenTag = By.cssSelector(".green");
+    private By selected= By.cssSelector(".selected");// Selector for the green tag
     private By addedTag = By.cssSelector(".tag:nth-child(2)"); // Selector for the added tag on card
     private By cardContentFooter = By.cssSelector(".card-content > footer"); // Element to click to reveal edit link
     private By editDescriptionLink = By.linkText("Edit");
@@ -104,9 +105,12 @@ public class ListPage {
     public void clickGreenTag() {
         wait.until(ExpectedConditions.elementToBeClickable(greenTag)).click();
     }
+    public void clickTagDelete(){
+        wait.until(ExpectedConditions.elementToBeClickable(selected)).click();
+    }
 
     public boolean isTagDisplayed() {
-        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(addedTag)).size() > 0;
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(selected)).size() > 0;
     }
 
     public void clickCardContentFooter() {

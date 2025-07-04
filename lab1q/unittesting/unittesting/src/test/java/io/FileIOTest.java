@@ -15,7 +15,7 @@ public class FileIOTest {
 
     @Test
     public void readFile() {
-        String filepath = "C:\\Academics\\6th sem\\Testing\\lab1q\\unittesting\\unittesting\\src\\test\\resources\\grades_valid.txt";
+        String filepath = "/home/muhaimeen/Academics/6th Sem/Software-Testing/lab1q/unittesting/unittesting/src/test/resources/grades_valid.txt";
         int[] expectedArray = {3, 9, 0, 2, 10, 9, 3, 8, 0, 3};
         assertArrayEquals(expectedArray, fileio.readFile(filepath));
     }
@@ -27,13 +27,13 @@ public class FileIOTest {
     }
     @Test(expected = IllegalArgumentException.class)
     public void testReadEmptyFile() {
-        String filePath = "C:\\Academics\\6th sem\\Testing\\lab1q\\unittesting\\unittesting\\src\\test\\resources\\empty_file.txt";
+        String filePath = "/home/muhaimeen/Academics/6th Sem/Software-Testing/lab1q/unittesting/unittesting/src/test/resources/empty_file.txt";
         fileio.readFile(filePath);
     }
 
     @Test (expected = NumberFormatException.class)
     public void testReadFileWithInvalidNumber() {
-        String filePath = "C:\\Academics\\6th sem\\Testing\\lab1q\\unittesting\\unittesting\\src\\test\\resources\\grades_invalid.txt";
+        String filePath = "/home/muhaimeen/Academics/6th Sem/Software-Testing/lab1q/unittesting/unittesting/src/test/resources/grades_invalid.txt";
         fileio.readFile(filePath);
     }
 

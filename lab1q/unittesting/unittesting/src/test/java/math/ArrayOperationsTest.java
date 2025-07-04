@@ -17,7 +17,7 @@ public class ArrayOperationsTest {
     @Test
     public void findPrimesInFile() {
         FileIO fileio = new FileIO();
-        String filepath = "C:\\Academics\\6th sem\\Testing\\lab1q\\unittesting\\unittesting\\src\\test\\resources\\grades_valid.txt";
+        String filepath = "/home/muhaimeen/Academics/6th Sem/Software-Testing/lab1q/unittesting/unittesting/src/test/resources/grades_valid.txt";
         MyMath myMath = new MyMath();
         int[] expectedArray = {3, 2, 3};
         assertArrayEquals(expectedArray, arrayOperations.findPrimesInFile(fileio, filepath, myMath));

@@ -80,11 +80,6 @@ public class BoardTest {
     signInPage.clickSignIn(); // Perform default sign-in
 
     listPage.openBoard(); // Open an existing board
-
-    // Create a list first to ensure one exists for updating
-    listPage.clickAddList();
-    listPage.enterListName("Original List Name");
-
     // Now, click the list header to enable editing and update the name
     listPage.clickListHeader();
     listPage.enterListName("1234"); // Update the list name

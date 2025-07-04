@@ -22,6 +22,7 @@ public class InvalidaddMemberTest {
   private WebDriverWait wait;
   private SignInPage signInPage;
   private DashboardPage dashboardPage;
+  private ListPage listPage;
 
   @Before
   public void setUp() {
@@ -40,6 +41,7 @@ public class InvalidaddMemberTest {
     wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     signInPage = new SignInPage(driver, wait);
     dashboardPage = new DashboardPage(driver, wait);
+    listPage = new ListPage(driver, wait);
   }
 
   @After
@@ -51,7 +53,7 @@ public class InvalidaddMemberTest {
   public void testInvalidAddMember() {
     signInPage.open();
     signInPage.clickSignIn();
-    dashboardPage.clickBoard();
+    listPage.openBoard();
     dashboardPage.clickAddMember();
     dashboardPage.addMemberEmail("user@123.com");
     assertEquals("User does not exist", dashboardPage.getAddMemberError());
